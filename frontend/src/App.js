@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+
 function App() {
   const [formData, setFormData] = useState({
     Age: 35,
@@ -27,7 +29,7 @@ function App() {
 
   const predictChurn = async () => {
     setLoading(true);
-    const response = await fetch("http://127.0.0.1:8000/predict", {
+    const response = await fetch(`${API_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ data: formData })

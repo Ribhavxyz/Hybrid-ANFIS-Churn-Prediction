@@ -2,11 +2,19 @@
 __pycache__/
 *.pyc
 venv/
+.venv/
+backend/.venv/
+.pytest_cache/
 .env
+.env.local
 
 # Node
 node_modules/
+frontend/build/
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Claude Code local settings
+.claude/settings.local.json
